@@ -36,6 +36,9 @@ jobs:
 workflows:
   version:  2.1
   orb-free-workflow:
+    filteres:
+      branches:
+        only: main
     jobs:
       - test
       - build:
