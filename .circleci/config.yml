@@ -31,7 +31,10 @@ jobs:
       #       - ~/.npm
       - run:
           name: Run Tests
-          command: npm run test
+          command: npm run test  
+
+ orbs:
+   heroku: circleci/heroku@x.y # Use the Heroku orb in your config
 
 workflows:
   version:  2.1
@@ -41,3 +44,9 @@ workflows:
       - build:
           requires:
             - test
+      heroku/deploy-via-git:
+          requires:
+            - build
+          filters:
+              branches:
+                only: main
