@@ -37,7 +37,7 @@ workflows:
   version:  2.1
   orb-free-workflow:
     jobs:
-      - build
       - test
+      - build:
           requires:
-              - build
+            - test
