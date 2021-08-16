@@ -1,5 +1,8 @@
 version: 2.1
 
+orbs:
+  heroku: circleci/heroku@0.0.10. # Invoke the Heroku orb
+
 jobs:
   build:
     docker:
@@ -32,9 +35,6 @@ jobs:
       - run:
           name: Run Tests
           command: npm run test  
-
-orbs:
-  heroku: circleci/heroku@x.y # Use the Heroku orb in your config
 
 workflows:
   version:  2.1
