@@ -7,6 +7,9 @@ jobs:
     steps:
     - checkout
     - run:
+          name: install packages
+          command: npm i
+    - run:
         name: build for production
         command: npm run build
   test:
